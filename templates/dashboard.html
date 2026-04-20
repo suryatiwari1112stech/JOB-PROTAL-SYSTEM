@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+        }
+
+        .navbar {
+            background: #4facfe;
+            padding: 15px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main {
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logout-btn {
+            background: red;
+            padding: 8px 15px;
+            border-radius: 8px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div>👋 Welcome {{user}}</div>
+    <a href="/logout" class="logout-btn">Logout</a>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+    <h2>Dashboard</h2>
+
+    <div class="grid">
+
+        <!-- VIEW JOBS -->
+        <a href="/jobs">
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135673.png">
+                <h3>View Jobs</h3>
+                <p>Browse all available jobs</p>
+            </div>
+        </a>
+
+        <!-- ALL JOBS -->
+        <a href="/jobs">
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
+                <h3>All Jobs</h3>
+                <p>See complete job list</p>
+            </div>
+        </a>
+
+        <!-- MY APPLICATIONS -->
+        <a href="/my_applications">
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+                <h3>My Applications</h3>
+                <p>Track your applied jobs</p>
+            </div>
+        </a>
+
+        <!-- ADMIN ONLY -->
+        {% if user == "admin" %}
+
+        <a href="/add_job">
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png">
+                <h3>Add Job</h3>
+                <p>Post new job</p>
+            </div>
+        </a>
+
+        <a href="/all_applications">
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/942/942799.png">
+                <h3>All Applications</h3>
+                <p>Check all user applications</p>
+            </div>
+        </a>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

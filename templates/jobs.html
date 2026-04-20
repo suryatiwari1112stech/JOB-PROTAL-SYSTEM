@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Jobs</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 15px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+
+        p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #4facfe;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3b8eea;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            color: #4facfe;
+            font-weight: bold;
+        }
+
+        hr {
+            display: none;
+        }
+
+        /* 📱 Mobile Optimization */
+        @media (max-width: 480px) {
+            h3 {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>All Jobs</h2>
+
+{% for j in jobs %}
+
+    <div class="card">
+
+        <h3>{{ j[1] }}</h3>
+
+        <p><b>Company:</b> {{ j[2] }}</p>
+
+        <p><b>Location:</b> {{ j[3] }}</p>
+
+        <p>{{ j[4] }}</p>
+
+        <a href="/apply/{{j[0]}}">
+            <button>🚀 Apply</button>
+        </a>
+
+    </div>
+
+{% endfor %}
+
+<a class="back" href="/dashboard">⬅ Back</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply Job</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 60px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #f9f9f9;
+            font-size: 14px;
+        }
+
+        input[type="file"]:hover {
+            border-color: #ff7e5f;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: #ff7e5f;
+            border: none;
+            color: white;
+            font-size: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #e96b50;
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #ff7e5f;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 📱 Mobile optimization */
+        @media (max-width: 480px) {
+            .container {
+                margin: 30px auto;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            input[type="file"] {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Apply for Job</h2>
+
+<form method="post" enctype="multipart/form-data">
+
+    <input type="file" name="resume" required><br><br>
+
+    <button type="submit">Submit Application</button>
+
+</form>
+
+<a href="/jobs">⬅ Back</a>
+
+</div>
+
+</body>
+</html>
